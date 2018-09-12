@@ -9,7 +9,7 @@
 
 ## Laravel Meetup API
 
-#Installation
+<h1><a href="#">#Installation</a></h1>
 
 <ol>
 
@@ -45,16 +45,16 @@
   </code>
 
 <li> Seed your database with dummy data</li>
-    
     <code>
         php artisan db:seed
     </code>
+</ol>
 
 <hr>
 
-#API Endpoint reference
+<h1><a href="#">#API Endpoint reference</a></h1>
 
-<em>Base path: <code>/api</code></em>
+<h2><em>Base path: <code>/api</code></em></h2>
 
 The API is divided into <strong>Users</strong> and <strong>Meetups</strong>
 
@@ -63,18 +63,93 @@ The API is divided into <strong>Users</strong> and <strong>Meetups</strong>
 <ul>
 	<li>
 		<code>
-		GET
+		GET /meetups
 		</code>
-		<br>
-		<span>
-			/meetups
-		</span>
+        <br/>
 		<small>
 			Get all meetups
+		</small>
+	</li>
+    <li>
+		<code>
+		GET /meetups/{id}
+		</code>
+        <br/>
+		<small>
+			Get a specific meetup
+		</small>
+	</li>
+    <li>
+		<code>
+		POST /meetups
+		</code>
+        <br/>
+		<small>
+			Create a new meetup.
+		</small>
+        <em>Body parameters:</em>
+        <ul>
+            <li>$string title</li>
+            <li>$string about</li>
+            <li>$string where</li>
+            <li>$string when</li>
+        </ul>
+        <em> Returns the meetup if successful, otherwise returns an HTTP Exception.
+	</li>
+</ul>
+
+
+<h3>Users</h3>
+<hr>
+<ul>
+	<li>
+		<code>
+			GET /users
+		</code>
+		<br>
+		<small>
+			Get all users
+		</small>
+	</li>
+	<li>
+		<code>
+			GET /user/{id}
+		</code>
+		<br>
+		<small>
+			Get a specific user with any meetups he is attending
+		</small>
+	</li>
+	<li>
+		<code>
+			POST /user/{user}/meetups/{meetup}/attend
+		</code>
+		<br>
+		<small>
+			Register a user with an id {user} to attend a specific meetup {meetup}.
+			Returns the user if succesful, otherwise returns an HTTP Exception.
+		</small>
+	</li>
+	<li>
+		<code>
+			POST /user/{user}/meetups/{meetup}/unattend
+		</code>
+		<br>
+		<small>
+			Makes the user with an id {user} unnatend a specific meetup {meetup}.
+			Returns the user if succesful, otherwise returns an HTTP Exception.
 		</small>
 	</li>
 </ul>
 
 
+<h1><a href="#">#Error status codes</a></h1>
 
+<p>All error responses will be returned as JSON. There will be additional information on some responses. To see more please refer to the <code> App/Exceptions/Handler.php</code> file, where the error handling logic lies.
+    
+ **Also, every query gets logged in the laravel.log file, which u can find at <code>app/storage/logs/laravel.log</code> <br>
+ **If you want to disable this, comment it out in the <code>App/Providers/ApiServiceProvider.php</code> file. If, however, you decide to keep it, there is a handy artisan command for clearing the log as it can get messy. You can run it via
+ <code>php artisan log:clear</code>
+ 
+ Still needs a few tweaks here and there. As always, any feedback is greatly appreciated!
 
