@@ -147,10 +147,11 @@ The API is divided into <strong>Users</strong> and <strong>Meetups</strong>
 <h1><a href="#">#Error status codes</a></h1>
 
 <p>All error responses will be returned as JSON. There will be additional information on some responses. To see more please refer to the <code> App/Exceptions/Handler.php</code> file, where the error handling logic lies.
-    
+<strong>
  **Also, every query gets logged in the laravel.log file, which u can find at <code>app/storage/logs/laravel.log</code> <br>
- **If you want to disable this, comment it out in the <code>App/Providers/ApiServiceProvider.php</code> file. If, however, you decide to keep it, there is a handy artisan command for clearing the log as it can get messy. You can run it via
- <code>php artisan log:clear</code>
+ **If you want to disable this, comment it out in the <code>App/Providers/ApiServiceProvider.php</code> file. If, however, you decide to keep it, there is a handy artisan command for clearing the log as it can get messy. You can run it via</strong>
+<br/>
+<code>php artisan log:clear</code>
  
  Still needs a few tweaks here and there. As always, any feedback is greatly appreciated!
 
