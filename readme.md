@@ -9,7 +9,7 @@
 
 ## Laravel Meetup API
 
-<h1><a href="#">#Installation</a></h1>
+<h1 id="install"><a href="#install">#Installation</a></h1>
 
 <ol>
 
@@ -52,7 +52,7 @@
 
 <hr>
 
-<h1><a href="#">#API Endpoint reference</a></h1>
+<h1 id="api"><a href="#api">#API Endpoint reference</a></h1>
 
 <h2><em>Base path: <code>/api</code></em></h2>
 
@@ -144,7 +144,7 @@ The API is divided into <strong>Users</strong> and <strong>Meetups</strong>
 </ul>
 
 
-<h1><a href="#">#Error status codes</a></h1>
+<h1 id="error"><a href="#error">#Error status codes</a></h1>
 
 <p>All error responses will be returned as JSON. There will be additional information on some responses. To see more please refer to the <code> App/Exceptions/Handler.php</code> file, where the error handling logic lies.
 <strong>
