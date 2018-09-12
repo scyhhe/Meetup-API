@@ -87,12 +87,13 @@ The API is divided into <strong>Users</strong> and <strong>Meetups</strong>
 		<small>
 			Create a new meetup.
 		</small>
+        <br/>
         <em>Body parameters:</em>
         <ul>
-            <li>$string title</li>
-            <li>$string about</li>
-            <li>$string where</li>
-            <li>$string when</li>
+            <li><em>$string</em> title</li>
+            <li><em>$string</em> about</li>
+            <li><em>$string</em> where</li>
+            <li><em>$string</em> when</li>
         </ul>
         <em> Returns the meetup if successful, otherwise returns an HTTP Exception.
 	</li>
